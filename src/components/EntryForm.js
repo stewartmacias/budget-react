@@ -1,7 +1,14 @@
 import React, { Fragment } from 'react';
 import { Checkbox, Form, Segment } from 'semantic-ui-react';
 
-function EntryForm({description,value,isExpense, setDescription, setValue, setIsExpense}) {
+function EntryForm({
+    description,
+    value,
+    isExpense, 
+    setDescription, 
+    setValue, 
+    setIsExpense
+}) {
     return (
         <Fragment>
             <Form.Group widths={3}>

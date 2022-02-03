@@ -8,9 +8,8 @@ import ModalEdit from './components/ModalEdit';
 import NewEntryForm from './components/NewEntryForm';
 
 
-
 function App() {
-  const [entries, setEntries] = useState(initialentries);
+  const [entries, setEntries] = useState(initialEntries);
   const [description, setDescription] = useState('');
   const [value, setValue] = useState('');
   const [isExpense, setIsExpense] = useState(true);
@@ -30,6 +29,7 @@ function App() {
       setEntries(newEntries);
       resetEntry();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpen]);
 
   useEffect(()=> {
@@ -46,7 +46,8 @@ function App() {
     setincomeTotal(totalIncome);
     setExpenseTotal(totalExpense);
     //console.log(`total incomes are: ${totalIncome} and total expenses are: ${totalExpense}`);
-  }, [entries])
+  }, [entries]);
+
 
   //const deleteEntry = (id) => {}
   function deleteEntry(id){
@@ -140,7 +141,7 @@ function App() {
 
 export default App;
 
-var initialentries = [
+var initialEntries = [
   {
     id: 1,
     description : 'Work income',
