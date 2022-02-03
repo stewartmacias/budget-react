@@ -8,7 +8,7 @@ function DisplayBalance( {title, value, size='tiny', color='black', textAlign='l
       {title}
     </Statistic.Label>
     <Statistic.Value>
-        {value}
+        ${value}
     </Statistic.Value>
   </Statistic>
   );
