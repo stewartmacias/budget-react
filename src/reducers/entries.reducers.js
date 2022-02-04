@@ -24,19 +24,19 @@ var initialEntries = [
     },
     {
         id: 2,
-        description: 'Water bill',
+        description: 'Water bill redux',
         value: 20,
         isExpense: true
     },
     {
         id: 3,
-        description: 'Rent',
+        description: 'Rent redux',
         value: 200,
         isExpense: true
     },
     {
         id: 4,
-        description: 'Power bill',
+        description: 'Power bill redux',
         value: 50,
         isExpense: true
     }

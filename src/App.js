@@ -6,10 +6,10 @@ import EntryLines from './components/EntryLines';
 import MainHeader from './components/MainHeader';
 import ModalEdit from './components/ModalEdit';
 import NewEntryForm from './components/NewEntryForm';
+import {useSelector} from 'react-redux'; 
 
 
 function App() {
-  const [entries, setEntries] = useState(initialEntries);
   const [description, setDescription] = useState('');
   const [value, setValue] = useState('');
   const [isExpense, setIsExpense] = useState(true);
@@ -18,6 +18,7 @@ function App() {
   const [incomeTotal, setincomeTotal] = useState(0);
   const [expenseTotal, setExpenseTotal] = useState(0);
   const [total, setTotal] = useState(0);
+  const entries = useSelector(state => state.entries);
 
   useEffect(() => {
     if(!isOpen && entryId) {
@@ -26,7 +27,7 @@ function App() {
       newEntries[index].description = description;
       newEntries[index].value = value;
       newEntries[index].isExpense = isExpense;
-      setEntries(newEntries);
+      //setEntries(newEntries);
       resetEntry();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -47,15 +48,6 @@ function App() {
     setExpenseTotal(totalExpense);
     //console.log(`total incomes are: ${totalIncome} and total expenses are: ${totalExpense}`);
   }, [entries]);
-
-
-  //const deleteEntry = (id) => {}
-  function deleteEntry(id){
-    const result = entries.filter(entry => entry.id !== id);
-    //console.log('entries', entries);
-    //console.log('result', result);
-    setEntries(result);
-  }
 
   function editEntry(id) {
     console.log(`edit entry with id ${id}` );
@@ -79,7 +71,7 @@ function App() {
     });
     console.log(`entries`, entries);
     console.log(`result`, result);
-    setEntries(result);
+    //setEntries(result);
     resetEntry();
   }
 
@@ -107,7 +99,6 @@ function App() {
  
       <EntryLines 
         entries={entries} 
-        deleteEntry={deleteEntry} 
         setIsOpen={setIsOpen}
         editEntry={editEntry}
       />
@@ -140,30 +131,3 @@ function App() {
 }
 
 export default App;
-
-var initialEntries = [
-  {
-    id: 1,
-    description : 'Work income',
-    value : 1000,
-    isExpense: false
-  },
-  {
-    id: 2,
-    description : 'Water bill',
-    value : 20,
-    isExpense: true
-  },
-  {
-    id: 3,
-    description : 'Rent',
-    value : 200,
-    isExpense: true
-  },
-  {
-    id: 4,
-    description : 'Power bill',
-    value : 50,
-    isExpense: true
-  }
-]
