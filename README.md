@@ -5,11 +5,39 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Available Scripts
 
 In the project directory, you can run:
+### `npm install`
+
+### `npm run backend`
+
+Runs the app in the development mode.\
+Open [http://localhost:3001](http://localhost:3001/entries) to view it in your browser.
+
 
 ### `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+There is a compatibility problem with semantic-ui in case you had problems executing the project you should follow the next steps: 
+
+`Module build failed: UnhandledSchemeError: Reading from "data:application/x-font-ttf;charset=utf-8;;base64`
+the problem come from the double semi colon ;;
+
+1. removed one of them in every files containing the double semi colon ;;
+    - `\node_modules\semantic-ui-css\components\step.min.css`
+
+    - `\node_modules\semantic-ui-css\components\step.css`
+
+    - `\node_modules\semantic-ui-css\semantic.min.css`
+
+    - `\node_modules\semantic-ui-css\semantic.css`
+
+2. clean the cache folders
+    - `\node_modules\.cache\default-development`
+
+    - `\node_modules\.cache\babel-loader`
+
+3. restart the dev server
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
