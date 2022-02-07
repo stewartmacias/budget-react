@@ -6,8 +6,8 @@ import EntryLines from './components/EntryLines';
 import MainHeader from './components/MainHeader';
 import ModalEdit from './components/ModalEdit';
 import NewEntryForm from './components/NewEntryForm';
-import {useSelector} from 'react-redux'; 
-
+import {useDispatch, useSelector} from 'react-redux'; 
+import { getAllEntries } from './actions/entries.actions';
 
 function App() {
   const [incomeTotal, setincomeTotal] = useState(0);
@@ -21,6 +21,12 @@ function App() {
    const index = entries.findIndex(entry => entry.id === id);
    setEntry(entries[index]);
   }, [isOpen, id, entries]);
+
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getAllEntries());
+  }, []);
 
   useEffect(()=> {
     let totalIncome = 0;
