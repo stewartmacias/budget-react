@@ -26,7 +26,7 @@ function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getAllEntries());
-  }, []);
+  }, [dispatch]);
 
   useEffect(()=> {
     let totalIncome = 0;
