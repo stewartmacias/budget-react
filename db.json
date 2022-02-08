@@ -15,6 +15,14 @@
     {
       "id": 4,
       "description": "Power bill redux"
+    },
+    {
+      "id": "a352ae77-14dd-4b6d-b554-9b8752b136a9",
+      "description": "netflix"
+    },
+    {
+      "id": "3ca9f82a-0891-4d5b-bce2-83bf9477dc4b",
+      "description": "luz"
     }
   ],
   "values": [
@@ -37,6 +45,16 @@
       "id": 4,
       "value": 50,
       "isExpense": true
+    },
+    {
+      "id": "a352ae77-14dd-4b6d-b554-9b8752b136a9",
+      "isExpense": true,
+      "value": "80"
+    },
+    {
+      "id": "3ca9f82a-0891-4d5b-bce2-83bf9477dc4b",
+      "isExpense": true,
+      "value": "100"
     }
   ]
 }
